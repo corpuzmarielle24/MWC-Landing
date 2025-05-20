@@ -1,4 +1,3 @@
-
 const team = [
   {
     image: "/lovable-uploads/cc2a534c-aa27-4d66-86e7-2cc42e921710.png",
@@ -24,7 +23,7 @@ const team = [
 
 const TeamSection = () => {
   return (
-    <section className="bg-white py-16">
+    <section id="team" className="bg-white py-16">
       <div className="container px-4 mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Meet the Team</h2>
         

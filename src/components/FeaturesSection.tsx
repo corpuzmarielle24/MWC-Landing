@@ -1,4 +1,3 @@
-
 import { MessageSquare, Book, Bot, MessageCircle, Activity } from "lucide-react";
 
 const features = [
@@ -36,7 +35,7 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section className="bg-secondary py-16">
+    <section id="features" className="bg-secondary py-16">
       <div className="container px-4 mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Features</h2>
         

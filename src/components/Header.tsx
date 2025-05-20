@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { Info, LayoutGrid, Users, Mail } from "lucide-react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,6 +24,14 @@ const Header = () => {
     };
   }, []);
 
+  // Scroll to section function
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -39,21 +49,47 @@ const Header = () => {
           />
           <h1 className="text-xl md:text-2xl font-bold text-primary">Mental Well Connect</h1>
         </div>
-        <div className="flex gap-4">
-          <Button 
-            variant="outline"
-            className="hidden md:flex"
-            onClick={() => window.open("https://www.mentalwellconnect.online/", "_blank")}
+        
+        <div className="hidden md:flex items-center gap-6">
+          <button 
+            onClick={() => scrollToSection("hero")} 
+            className="flex items-center gap-1 hover:text-primary transition-colors"
           >
-            Get Started
-          </Button>
-          <Button 
-            className="bg-primary hover:bg-primary/90"
-            onClick={() => window.open("https://www.mentalwellconnect.online/", "_blank")}
+            <Info className="w-4 h-4" />
+            <span>About</span>
+          </button>
+          
+          <button 
+            onClick={() => scrollToSection("features")} 
+            className="flex items-center gap-1 hover:text-primary transition-colors"
           >
-            Login
-          </Button>
+            <LayoutGrid className="w-4 h-4" />
+            <span>Features</span>
+          </button>
+          
+          <button 
+            onClick={() => scrollToSection("team")} 
+            className="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            <Users className="w-4 h-4" />
+            <span>Team</span>
+          </button>
+          
+          <button 
+            onClick={() => scrollToSection("contact")} 
+            className="flex items-center gap-1 hover:text-primary transition-colors"
+          >
+            <Mail className="w-4 h-4" />
+            <span>Contact Us</span>
+          </button>
         </div>
+        
+        <Button 
+          className="bg-primary hover:bg-primary/90"
+          onClick={() => window.open("https://www.mentalwellconnect.online/", "_blank")}
+        >
+          Login
+        </Button>
       </div>
     </header>
   );
