@@ -5,7 +5,7 @@ const Footer = () => {
   const visitorCount = useVisitorCounter();
 
   return (
-    <footer className="bg-secondary py-12">
+    <footer id="contact" className="bg-secondary py-12">
       <div className="container px-4 mx-auto text-center">
         <h3 className="text-xl font-bold mb-4">Contact Us At:</h3>
         

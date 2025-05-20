@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="bg-white pt-28 pb-16">
+    <section id="about" className="bg-white pt-28 pb-16">
       <div className="container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
           {/* Left content */}

@@ -24,7 +24,7 @@ const team = [
 
 const TeamSection = () => {
   return (
-    <section className="bg-white py-16">
+    <section id="team" className="bg-white py-16">
       <div className="container px-4 mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Meet the Team</h2>
         
