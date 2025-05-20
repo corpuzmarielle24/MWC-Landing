@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Handle scroll effect
   useEffect(() => {
@@ -26,6 +27,7 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setMobileMenuOpen(false); // Close mobile menu after clicking
   };
 
   return (
@@ -46,7 +48,7 @@ const Header = () => {
           <h1 className="text-xl md:text-2xl font-bold text-primary">Mental Well Connect</h1>
         </div>
 
-        {/* Navigation Links */}
+        {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
           <button 
             onClick={() => scrollToSection('about')} 
@@ -74,13 +76,49 @@ const Header = () => {
           </button>
         </nav>
 
-        {/* Mobile menu button - This would be expanded in a real implementation */}
-        <button className="md:hidden text-gray-700">
+        {/* Mobile menu button */}
+        <button 
+          className="md:hidden text-gray-700 focus:outline-none"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden bg-white shadow-lg animate-fade-in">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <button 
+              onClick={() => scrollToSection('about')} 
+              className="text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => scrollToSection('features')} 
+              className="text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100"
+            >
+              Features
+            </button>
+            <button 
+              onClick={() => scrollToSection('team')} 
+              className="text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100"
+            >
+              Team
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')} 
+              className="text-gray-700 hover:text-primary transition-colors py-2"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
