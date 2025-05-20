@@ -11,7 +11,7 @@ const features = [
   {
     icon: <Book className="w-8 h-8" />,
     emoji: "📚",
-    title: "Mental Health Resources",
+    title: "Guided Activities",
     description: "Access informative articles and guides."
   },
   {
@@ -29,8 +29,8 @@ const features = [
   {
     icon: <Activity className="w-8 h-8" />,
     emoji: "🧘",
-    title: "Wellness Activities",
-    description: "Explore exercises and mindfulness tools."
+    title: "Consultation",
+    description: "Easily schedule and attend virtual consultations with licensed professionals."
   }
 ];
 
@@ -38,7 +38,7 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="bg-secondary py-16">
       <div className="container px-4 mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Features</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-20 text-center">Features</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {features.map((feature, index) => (

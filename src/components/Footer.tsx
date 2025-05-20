@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-secondary py-12">
       <div className="container px-4 mx-auto text-center">
-        <h3 className="text-xl font-bold mb-4">Contact Us At:</h3>
+        <h3 className="text-3xl font-bold mb-12">Contact Us At:</h3>
         
-        <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 ">
           <a 
             href="https://www.facebook.com/MentalWellConnect" 
             target="_blank" 
@@ -28,8 +28,9 @@ const Footer = () => {
           </a>
         </div>
         
+        
         <div className="border-t border-t-gray-300/30 pt-4 flex flex-col items-center">
-          <p className="mb-3">© CODE-ADA 2025. All Rights Reserved</p>
+          <p className="mb-20">© CODE-ADA 2025. All Rights Reserved</p>
           <div className="bg-white/20 py-1 px-4 rounded-full animate-pulse">
             <p className="flex items-center gap-2">
               <span className="font-semibold">Total Visitors:</span>
